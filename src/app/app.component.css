@@ -1,0 +1,33 @@
+.bgimage{
+    background-image: url('https://wallpaperaccess.com/full/329583.jpg');
+    font-family: "Lucida Console", "Courier New", monospace;
+    
+}
+.background{
+    background-color:rgba(71, 118, 248, 0.699);
+}
+.button{
+    margin: 0% 0% 5% 5%;
+}
+.btoff{
+    margin: 0% 0% 5% 5%;
+}
+.font{
+    color:rgb(255, 27, 27);
+    font-size: large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: linear-gradient(to right, #D500F9, #FFD54F);
+    background-repeat: no-repeats;
+}
+input.ng-invalid{
+    border-left: 5px solid red;
+}
+
+input.ng-valid{
+    border-left: 5px solid green;
+}

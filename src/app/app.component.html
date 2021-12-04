@@ -1,0 +1,100 @@
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="app.component.css" >
+</head>
+
+
+<body class="bgimage">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-5">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">
+    <img src="https://mpng.subpng.com/20180704/vbv/kisspng-art-film-cinema-fx-movie-channel-television-movie-poster-5b3c6f2e4a4653.2243007915306872783042.jpg" alt="logo" style="width:40px;">
+  </a>
+</nav>
+  
+
+<div class="container">
+  <form  [formGroup]="selectForm" >
+  
+    <div class="form-group">
+      <label class="font">Name:</label>
+      <input formControlName="user" type="text" required #input1 class="form-control"  placeholder="Enter Name" name="name" ngModel>
+    </div>
+    <div class="form-group">
+      <label class="font">Email:</label>
+      <input formControlName="email" type="email" required #input2 class="form-control"  placeholder="Enter email" name="email" ngModel>
+     
+    </div>
+    
+    <div class="form-group">
+      <label class="font">Phone:</label>
+      <input formControlName="phone" type="tel" required #input3 class="form-control"  placeholder="123-45-678" name="Phone" ngModel >
+    </div>
+
+    <div class="form-group">
+      <label class="font">Movie Name:</label>
+      <select #input4 class="custom-select mb-3" name="movie" ngModel>
+        <option selected>Movies Custom Select Menu</option>
+        <option *ngFor="let movie of movies">{{movie}}</option>  
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="font">Seat:</label>
+      <select #input5 class="custom-select mb-3" name="seat" ngModel>
+        <option selected>Seating Custom Select Menu</option>
+        <option *ngFor="let seat of seats">{{seat}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="font">Date:</label>
+      <input #input6 type="date" class="form-control" name="date" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label class="font">Time:</label>
+      <select #input7  class="custom-select rounded mb-3" name="seat" ngModel>
+        
+        <option> Morning (9AM - 12PM)</option>
+        <option> Evening (6AM - 9PM)</option>
+      </select>
+    </div>
+
+    <div class="checkbox">
+      <label><input type="checkbox" class="font" name="remember" ngModel> <span class="font">Remember me</span></label>
+    </div>
+    
+
+  
+    <!-- payments button -->
+    <button routerLink="/payments" type="button" class="btn btn-block btn-outline-warning" data-toggle="modal" data-target="#staticBackdrop"> Pay Now
+    </button>
+
+   
+            <button
+            (click)="btnClick()"
+             (click)="logInput1(input1.value)"
+            (click)="logInput2(input2.value)"
+            (click)="logInput3(input3.value)"
+            (click)="logInput4(input4.value)"
+            (click)="logInput5(input5.value)"
+            (click)="logInput6(input6.value)"
+            (click)="logInput7(input7.value)"
+             type="button" 
+             class="btn btn-block btn-primary"
+             >Book My Show </button>
+             
+  </form>
+</div>
+
+</body>
+<router-outlet></router-outlet>
+
